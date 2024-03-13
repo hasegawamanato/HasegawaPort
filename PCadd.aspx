@@ -23,6 +23,13 @@
         .auto-style5 {
             color: #FF3300;
         }
+        .auto-style6 {
+            width: 94px;
+            height: 23px;
+        }
+        .auto-style7 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -44,8 +51,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">メーカー：</td>
-                <td>
+                <td class="auto-style6" style="text-align: right; background-color: #CCFF99;">メーカー：</td>
+                <td class="auto-style7">
                     <asp:TextBox ID="TextBox3" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>

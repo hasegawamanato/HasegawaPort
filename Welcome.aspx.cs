@@ -49,13 +49,12 @@ namespace Login
                     name = (string)cmd.ExecuteScalar();
                 }
             }
-
             return name;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Server.Transfer("");
+            Server.Transfer("UserLoanRecords.aspx");
         }
     }
 }

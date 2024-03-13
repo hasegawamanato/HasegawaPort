@@ -77,8 +77,14 @@
     <Content Include="Login.aspx" />
     <Content Include="Login2.aspx" />
     <Content Include="Login3.aspx" />
+    <Content Include="NewRecords.aspx" />
+    <Content Include="NewRecords2.aspx" />
     <Content Include="PCadd.aspx" />
+    <Content Include="PCdelete.aspx" />
+    <Content Include="PCedit.aspx" />
+    <Content Include="PCinfo.aspx" />
     <Content Include="Success.aspx" />
+    <Content Include="UserLoanRecords.aspx" />
     <Content Include="Web.config" />
     <Content Include="Welcome.aspx" />
   </ItemGroup>
@@ -125,12 +131,47 @@
     <Compile Include="Login3.aspx.designer.cs">
       <DependentUpon>Login3.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewRecords.aspx.cs">
+      <DependentUpon>NewRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewRecords.aspx.designer.cs">
+      <DependentUpon>NewRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewRecords2.aspx.cs">
+      <DependentUpon>NewRecords2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewRecords2.aspx.designer.cs">
+      <DependentUpon>NewRecords2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PCadd.aspx.cs">
       <DependentUpon>PCadd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PCadd.aspx.designer.cs">
       <DependentUpon>PCadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PCdelete.aspx.cs">
+      <DependentUpon>PCdelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PCdelete.aspx.designer.cs">
+      <DependentUpon>PCdelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PCedit.aspx.cs">
+      <DependentUpon>PCedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PCedit.aspx.designer.cs">
+      <DependentUpon>PCedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PCinfo.aspx.cs">
+      <DependentUpon>PCinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PCinfo.aspx.designer.cs">
+      <DependentUpon>PCinfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Success.aspx.cs">
@@ -139,6 +180,13 @@
     </Compile>
     <Compile Include="Success.aspx.designer.cs">
       <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLoanRecords.aspx.cs">
+      <DependentUpon>UserLoanRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLoanRecords.aspx.designer.cs">
+      <DependentUpon>UserLoanRecords.aspx</DependentUpon>
     </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
