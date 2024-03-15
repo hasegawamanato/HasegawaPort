@@ -23,23 +23,6 @@ namespace YourNamespace
             }
         }
 
-        //protected void BindGrid()
-        //{
-        //    // データベースからデータを取得してGridViewにバインドする
-        //    string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        string query = "SELECT Pcid, Pcname, UserId, LoanDate, ReturnDate, Status FROM Computers INNER JOIN LoanRecords ON Computers.Pcid = LoanRecords.DeviceID";
-        //        using (SqlCommand command = new SqlCommand(query, connection))
-        //        {
-        //            SqlDataAdapter adapter = new SqlDataAdapter(command);
-        //            DataTable dataTable = new DataTable();
-        //            adapter.Fill(dataTable);
-        //            GridView1.DataSource = dataTable;
-        //            GridView1.DataBind();
-        //        }
-        //    }
-        //}
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {

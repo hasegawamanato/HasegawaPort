@@ -18,5 +18,15 @@ namespace Login
         {
             Server.Transfer("AdminPC.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminUser.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login3.aspx");
+        }
     }
 }

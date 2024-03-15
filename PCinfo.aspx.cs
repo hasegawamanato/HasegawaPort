@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Login
 {
@@ -14,23 +10,28 @@ namespace Login
         {
             if (!IsPostBack)
             {
-
                 // ページロード時にデータを表示
                 DisplayLoanRecord();
             }
         }
+
         protected void DisplayLoanRecord()
         {
-            // データベースからLoanRecordsテーブルのレコードを取得して表示
-            string connectionString = "your_connection_string_here";
-            string query = "SELECT RecordID, UserId, LoanDate, ReturnDate FROM LoanRecords WHERE RecordID";
+            // クエリを変更し、LoanRecordsとComputersテーブルをJOINして関連するレコードを取得する
+            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string query = @"SELECT LR.RecordID, LR.UserId, LR.LoanDate, LR.ReturnDate 
+                             FROM LoanRecords LR
+                             INNER JOIN Computers C ON LR.DeviceID = C.Pcid
+                             WHERE C.Pcid = @Pcid"; // Pcidを条件に追加
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            // PCdata.aspxから渡されたPcidを取得
+            string pcid = Request.QueryString["Pcid"];
+
+            using (SqlConnection connection = new SqlConnection(strCon))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    //command.Parameters.AddWithValue("@RecordID", Request.QueryString["RecordID"]);
-
+                    command.Parameters.AddWithValue("@Pcid", pcid); // パラメータを追加
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -45,6 +46,11 @@ namespace Login
                     reader.Close();
                 }
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminPCdata.aspx");
         }
     }
 }

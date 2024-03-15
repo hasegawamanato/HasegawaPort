@@ -19,7 +19,11 @@
         }
         .auto-style4 {
             height: 20px;
-            width: 1077px;
+            width: 951px;
+        }
+        .auto-style5 {
+            height: 20px;
+            width: 95px;
         }
     </style>
 </head>
@@ -30,16 +34,19 @@
                 <td class="auto-style3">
                     <asp:Button ID="Button1" runat="server" BorderStyle="None" OnClick="Button1_Click" Text="貸出情報" />
                 </td>
+                <td class="auto-style5">
+                    <asp:Button ID="Button2" runat="server" BorderStyle="None" OnClick="Button2_Click" Text="登録情報変更" />
+                </td>
                 <td class="auto-style4">
-                    <asp:Button ID="Button2" runat="server" BorderStyle="None" OnClick="Button1_Click" Text="登録情報変更" />
+                    <asp:Button ID="Button3" runat="server" BorderStyle="None" OnClick="Button3_Click" Text="ログアウト" />
                 </td>
                 <td class="auto-style2">
-        <asp:Label ID="Label1" runat="server"></asp:Label>
-                </td>
+        <asp:Label ID="Label1" runat="server" BackColor="#CCFFFF" BorderColor="#CC66FF"></asp:Label>
+                    さんこんにちは</td>
             </tr>
         </table>
-        <br />
-        <h1>PC貸出管理</h1>
+        <hr />
+        <h1>PC貸出管理サイト</h1>
         <hr />
         <br />
         <br />

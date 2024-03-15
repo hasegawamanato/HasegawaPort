@@ -15,6 +15,10 @@
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PC情報管理画面" />
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="新規PC登録画面" />
+
+
+
+
         </div>
     </form>
 </body>

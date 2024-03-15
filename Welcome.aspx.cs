@@ -24,7 +24,13 @@ namespace Login
                     string name = GetUserNameFromDatabase(username);
 
                     // 名前をLabel1に表示する
-                    Label1.Text =name;
+                    Label1.Text = name;
+
+                    // ユーザー名に対応するUserIDを取得
+                    string userID = GetUserIDFromDatabase(username);
+
+                    // UserIDをSessionに保存する
+                    Session["UserID"] = userID;
                 }
                 else
                 {
@@ -33,6 +39,25 @@ namespace Login
                 }
             }
         }
+
+        private string GetUserIDFromDatabase(string username)
+        {
+            string userID = "";
+            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string selectCommand = "SELECT UserId FROM User_Login WHERE UserId=@UserId";
+                using (SqlCommand cmd = new SqlCommand(selectCommand, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", username);
+                    userID = (string)cmd.ExecuteScalar();
+                }
+            }
+            return userID;
+        }
+
 
         private string GetUserNameFromDatabase(string username)
         {
@@ -55,6 +80,16 @@ namespace Login
         protected void Button1_Click(object sender, EventArgs e)
         {
             Server.Transfer("UserLoanRecords.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("UserInfoChange.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login3.aspx");
         }
     }
 }

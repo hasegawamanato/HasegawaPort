@@ -19,7 +19,7 @@ namespace Login
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string pcid = TextBox1.Text;
+            string pcid = TextBox10.Text;
             string pcname = TextBox2.Text;
             string manufacturer = TextBox3.Text;
             string cpu = TextBox4.Text;
@@ -62,9 +62,6 @@ namespace Login
             Response.Redirect("Success.aspx");
         }
 
-        protected void TextBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

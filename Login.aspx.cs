@@ -16,7 +16,15 @@ namespace Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                TextBox1.Text = "";
+                TextBox2.Text = "";
+                TextBox3.Text = "";
+                TextBox4.Text = "";
+                TextBox5.Text = "";
+                TextBox6.Text = "";
+            }
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
@@ -98,6 +106,11 @@ namespace Login
             }
 
             Server.Transfer("Login2.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login3.aspx");
         }
     }
 }

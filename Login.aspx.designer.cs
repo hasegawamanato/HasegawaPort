@@ -87,6 +87,15 @@ namespace Login
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
 
         /// <summary>
+        /// RequiredFieldValidator6 コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+
+        /// <summary>
         /// CompareValidator1 コントロール。
         /// </summary>
         /// <remarks>
@@ -132,6 +141,15 @@ namespace Login
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
 
         /// <summary>
+        /// RequiredFieldValidator5 コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+
+        /// <summary>
         /// CompareValidator2 コントロール。
         /// </summary>
         /// <remarks>
@@ -148,6 +166,15 @@ namespace Login
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Button2 コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
         /// Button1 コントロール。

@@ -40,23 +40,24 @@
                 </tr>
             </table>
             <h1>PC一覧</h1>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Pcid" DataSourceID="SqlDataSource2" Width="912px" OnRowCommand="GridView1_RowCommand">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="Pcid" DataSourceID="SqlDataSource2" Width="1200px" OnRowCommand="GridView1_RowCommand">
     <Columns>
-        <asp:BoundField DataField="Pcid" HeaderText="Pcid" ReadOnly="True" SortExpression="Pcid" />
-        <asp:BoundField DataField="Pcname" HeaderText="Pcname" SortExpression="Pcname" />
-        <asp:BoundField DataField="Manufacturer" HeaderText="Manufacturer" SortExpression="Manufacturer" />
+        <asp:BoundField DataField="Pcid" HeaderText="ID" ReadOnly="True" SortExpression="Pcid" />
+        <asp:BoundField DataField="Pcname" HeaderText="PC名" SortExpression="Pcname" />
+        <asp:BoundField DataField="Manufacturer" HeaderText="メーカー" SortExpression="Manufacturer" />
         <asp:BoundField DataField="CPU" HeaderText="CPU" SortExpression="CPU" />
-        <asp:BoundField DataField="MemoryCapacity" HeaderText="MemoryCapacity" SortExpression="MemoryCapacity" />
+        <asp:BoundField DataField="MemoryCapacity" HeaderText="メモリ" SortExpression="MemoryCapacity" />
         <asp:BoundField DataField="SSD" HeaderText="SSD" SortExpression="SSD" />
         <asp:BoundField DataField="HDD" HeaderText="HDD" SortExpression="HDD" />
-        <asp:BoundField DataField="PurchaseDate" HeaderText="PurchaseDate" SortExpression="PurchaseDate" />
-        <asp:BoundField DataField="Comment" HeaderText="Comment" SortExpression="Comment" />
+        <asp:BoundField DataField="PurchaseDate" HeaderText="購入日" SortExpression="PurchaseDate" />
+        <asp:BoundField DataField="Comment" HeaderText="コメント" SortExpression="Comment" />
 
          <asp:TemplateField HeaderText="コマンド">
             <ItemTemplate>
                 <div class="btn-group">
-                    <asp:Button ID="DetailsButton" runat="server" CssClass="btn btn-info" CommandName="Details" CommandArgument='<%# Container.DataItemIndex %>' Text="詳細情報" />
-                    <asp:Button ID="EditButton" runat="server" CssClass="btn btn-primary" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' Text="変更" />
+                    
+                    <asp:Button ID="EditButton" runat="server" CssClass="btn btn-primary" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' Text="編集" />
+                    <asp:Button ID="DetailsButton" runat="server" CssClass="btn btn-info" CommandName="Details" CommandArgument='<%# Container.DataItemIndex %>' Text="貸出情報" />
                     <asp:Button ID="DeleteButton" runat="server" CssClass="btn btn-danger" CommandName="Delete" CommandArgument='<%# Container.DataItemIndex %>' Text="削除" />
                 </div>
             </ItemTemplate>

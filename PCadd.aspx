@@ -39,15 +39,15 @@
             <tr>
                 <td class="auto-style3" style="text-align: right; background-color: #CCFF99;">PCID：</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="400px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" CssClass="auto-style5" ErrorMessage="PCIDが入力されていません"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="TextBox10" runat="server" Width="399px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox10" CssClass="auto-style5" ErrorMessage="PCIDが入力されていません"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">PC名：</td>
                 <td>
                     <asp:TextBox ID="TextBox2" runat="server" Width="400px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox1" CssClass="auto-style5" ErrorMessage="PC名が入力されていません"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="auto-style5" ErrorMessage="PC名が入力されていません"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -83,8 +83,7 @@
             <tr>
                 <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">購入日：</td>
                 <td>
-                    <asp:TextBox ID="TextBox8" runat="server" Width="400px"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox8" CssClass="auto-style5" ErrorMessage="日付はYYYY/MM/DDという入力をしてください" ValidationExpression="\d{4}/(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])"></asp:RegularExpressionValidator>
+                    <asp:TextBox ID="TextBox8" runat="server" Width="400px" TextMode="Date"></asp:TextBox>
                 </td>
             </tr>
             <tr>

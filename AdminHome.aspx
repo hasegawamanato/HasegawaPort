@@ -13,6 +13,9 @@
         .auto-style2 {
             width: 60px;
         }
+        .auto-style3 {
+            width: 918px;
+        }
     </style>
 </head>
 <body>
@@ -24,8 +27,11 @@
                     <td class="auto-style2">
                         <asp:Button ID="Button1" runat="server" BorderStyle="None" OnClick="Button1_Click" Text="貸出情報" />
                     </td>
+                    <td class="auto-style3">
+                        <asp:Button ID="Button2" runat="server" BorderStyle="None" Text="ユーザー管理" OnClick="Button2_Click" />
+                    </td>
                     <td>
-                        <asp:Button ID="Button2" runat="server" BorderStyle="None" Text="ユーザー管理" />
+                        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="ログアウト" />
                     </td>
                 </tr>
             </table>

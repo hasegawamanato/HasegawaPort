@@ -13,13 +13,13 @@ namespace Login
         {
             if (!IsPostBack)
             {
-                GridView1.Columns[1].HeaderText = "ID";
-                GridView1.Columns[2].HeaderText = "PC名";
-                GridView1.Columns[3].HeaderText = "メーカー";
-                GridView1.Columns[4].HeaderText = "CPU";
-                GridView1.Columns[5].HeaderText = "メモリ";
-                GridView1.Columns[6].HeaderText = "購入日";
-                GridView1.Columns[7].HeaderText = "コメント";
+                //GridView1.Columns[1].HeaderText = "ID";
+                //GridView1.Columns[2].HeaderText = "PC名";
+                //GridView1.Columns[3].HeaderText = "メーカー";
+                //GridView1.Columns[4].HeaderText = "CPU";
+                //GridView1.Columns[5].HeaderText = "メモリ";
+                //GridView1.Columns[6].HeaderText = "購入日";
+                //GridView1.Columns[7].HeaderText = "コメント";
             }
         }
 

@@ -52,7 +52,7 @@ namespace Login
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
-                string selectCommand = "SELECT RecordID, UserID, LoanDate, ReturnDate FROM LoanRecords WHERE UserId=@UserId";
+                string selectCommand = "SELECT RecordID, UserID,DeviceID, LoanDate, ReturnDate FROM LoanRecords WHERE UserId=@UserId";
                 using (SqlCommand cmd = new SqlCommand(selectCommand, con))
                 {
                     cmd.Parameters.AddWithValue("@UserId", username);
@@ -63,10 +63,20 @@ namespace Login
                             // 貸出情報を取得してラベルに表示
                             if (reader.Read())
                             {
+                                Label7.Text = "貸出番号：";
+                                Label8.Text = "ユーザーID：";
+                                Label11.Text = "PCID";
+                                Label9.Text = "貸出日：";
+                                Label10.Text = "返却予定日：";
                                 Label1.Text = reader["RecordID"].ToString();
                                 Label2.Text = reader["UserID"].ToString();
+                                Label12.Text = reader["DeviceID"].ToString();
                                 Label3.Text = reader["LoanDate"].ToString();
                                 Label4.Text = reader["ReturnDate"].ToString();
+                                Button1.Visible = false;
+                                Button2.Visible = true;
+                                Button3.Visible = true;
+                                Button4.Visible = false;
                             }
                         }
                         else
@@ -75,6 +85,9 @@ namespace Login
                             // メッセージを表示し、ボタンを表示する
                             Label6.Text = "貸出情報が存在しません。貸出をご希望の方は下記ボタンよりお手続きください。";
                             Button1.Visible = true;
+                            Button2.Visible = false;
+                            Button3.Visible = false;
+                            Button4.Visible= true;
                         }
                     }
                 }
@@ -84,6 +97,23 @@ namespace Login
         protected void Button1_Click(object sender, EventArgs e)
         {
             Server.Transfer("NewRecords.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["DeviceID"] = Label12.Text;
+            Session["Username"] = Label2.Text;
+            Server.Transfer("PCreturn.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Welcome.aspx");
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Welcome.aspx");
         }
     }
 }
