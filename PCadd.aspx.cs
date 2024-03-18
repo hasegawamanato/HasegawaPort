@@ -62,6 +62,9 @@ namespace Login
             Response.Redirect("Success.aspx");
         }
 
-       
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminPC.aspx");
+        }
     }
 }

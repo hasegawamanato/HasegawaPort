@@ -294,7 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Login20240318153143 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\hasegawa7 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

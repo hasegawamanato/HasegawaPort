@@ -61,10 +61,8 @@ namespace Login
                     command.ExecuteNonQuery();
                 }
             }
-
             // 削除後はAdminPCdata.aspxに戻る
             Response.Redirect("PCsuc.aspx");
         }
     }
-    
 }

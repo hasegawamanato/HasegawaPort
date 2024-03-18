@@ -61,7 +61,7 @@ namespace YourNamespace
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            Server.Transfer("AdminUser.aspx");
         }
 
         protected void Button6_Click(object sender, EventArgs e)
