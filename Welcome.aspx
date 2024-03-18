@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="Login.Welcome" uiCulture="" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="Login.Welcome"  %>
 
 <!DOCTYPE html>
 
@@ -9,22 +9,22 @@
     <style type="text/css">
         .auto-style1 {
             width: 100%;
-            height: 66px;
+            height: 72px;
         }
         .auto-style3 {
-            height: 2px;
+            height: 22px;
             width: 81px;
         }
         .auto-style4 {
-            height: 2px;
+            height: 22px;
             width: 922px;
         }
         .auto-style5 {
-            height: 2px;
+            height: 22px;
             width: 95px;
         }
         .auto-style6 {
-            height: 56px;
+            height: 87px;
         }
         .auto-style8 {
             color: #66FFFF;
@@ -34,7 +34,7 @@
             text-decoration: underline;
         }
         .auto-style11 {
-            height: 2px;
+            height: 22px;
         }
     </style>
 </head>
