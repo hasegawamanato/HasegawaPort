@@ -40,6 +40,11 @@ namespace Login
 
                 // NewRecords2.aspx ページにリダイレクト
                 Response.Redirect("NewRecords2.aspx");
-         }           
+         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Welcome.aspx");
+        }
     }
 }

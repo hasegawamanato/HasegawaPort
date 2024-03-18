@@ -60,45 +60,45 @@
             <td class="auto-style3" style="font-family: 游明朝; text-align: right;">ユーザーID：</td>
             <td class="auto-style9" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" Width="199px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" CssClass="auto-style7" ErrorMessage="ユーザーIDを入力してください"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" CssClass="auto-style7" ErrorMessage="ユーザーIDを入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3" style="font-family: 游明朝; text-align: right;">名前：</td>
             <td class="auto-style9" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox6" runat="server" Width="199px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox6" CssClass="auto-style7" ErrorMessage="お名前を入力してください"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox6" CssClass="auto-style7" ErrorMessage="お名前を入力してください" OnDataBinding="Button1_Click1" ValidationGroup="new"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3" style="font-family: 游明朝; text-align: right;">パスワード：</td>
             <td class="auto-style9" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox1_TextChanged" Width="199px" TextMode="Password" MaxLength="30"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="auto-style7" ErrorMessage="パスワードを入力してください"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="auto-style7" ErrorMessage="パスワードを入力してください" OnDataBinding="Button1_Click1" ValidationGroup="new"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style5" style="font-family: 游明朝; text-align: right;">パスワード確認：</td>
             <td class="auto-style6" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox1_TextChanged" Width="199px" TextMode="Password" MaxLength="30"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox3" CssClass="auto-style7" Display="Dynamic" ErrorMessage="確認用パスワードを入力してください"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox3" CssClass="auto-style7" ErrorMessage="パスワードが一致していません" Display="Dynamic"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox3" CssClass="auto-style7" Display="Dynamic" ErrorMessage="確認用パスワードを入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox3" CssClass="auto-style7" ErrorMessage="パスワードが一致していません" Display="Dynamic" ValidationGroup="new"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3" style="font-family: 游明朝; text-align: right;">メールアドレス：</td>
             <td class="auto-style9" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox1_TextChanged" Width="199px" TextMode="Email"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" CssClass="auto-style7" Display="Dynamic" ErrorMessage="メールアドレスを入力してください"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox4" CssClass="auto-style7" Display="Dynamic" ErrorMessage="メールアドレスが正しくありません" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" CssClass="auto-style7" Display="Dynamic" ErrorMessage="メールアドレスを入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox4" CssClass="auto-style7" Display="Dynamic" ErrorMessage="メールアドレスが正しくありません" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="new"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style11" style="font-family: 游明朝; text-align: right;">メールアドレス確認：</td>
             <td class="auto-style10" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox5" runat="server" OnTextChanged="TextBox1_TextChanged" Width="199px" TextMode="Email"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" CssClass="auto-style7" Display="Dynamic" ErrorMessage="確認用メールアドレスを入力してください"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="TextBox4" ControlToValidate="TextBox5" CssClass="auto-style7" ErrorMessage="メールアドレスが一致していません" Display="Dynamic"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" CssClass="auto-style7" Display="Dynamic" ErrorMessage="確認用メールアドレスを入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="TextBox4" ControlToValidate="TextBox5" CssClass="auto-style7" ErrorMessage="メールアドレスが一致していません" Display="Dynamic" ValidationGroup="new"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
@@ -109,7 +109,7 @@
         <asp:Label ID="Label1" runat="server" CssClass="auto-style7"></asp:Label>
         <br />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button1" runat="server" Text="登録" OnClick="Button1_Click1" />
+&nbsp;<asp:Button ID="Button1" runat="server" Text="登録" OnClick="Button1_Click1" ValidationGroup="new" />
         <div>
         </div>
     </form>

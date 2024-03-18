@@ -47,14 +47,14 @@
                     <td class="auto-style2" style="text-align: right">レンタル開始日：</td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox3" CssClass="auto-style5" ErrorMessage="レンタル開始日を入力してください。"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox3" CssClass="auto-style5" ErrorMessage="レンタル開始日を入力してください。" ValidationGroup="new"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2" style="text-align: right">返却予定日：</td>
                     <td>
                         <asp:TextBox ID="TextBox4" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox4" CssClass="auto-style5" ErrorMessage="返却予定日を入力してください。"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox4" CssClass="auto-style5" ErrorMessage="返却予定日を入力してください。" ValidationGroup="new"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +65,7 @@
             <span class="auto-style5">※レンタル開始日はレンタル希望日の3営業日前より申請してください。</span><br />
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="キャンセル" Width="86px" />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="レンタル確定" Width="101px" />
+&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="レンタル確定" Width="101px" ValidationGroup="new" />
             <br />
         </div>
     </form>

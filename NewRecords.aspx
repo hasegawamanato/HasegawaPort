@@ -36,6 +36,8 @@
                 <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Computers]"></asp:SqlDataSource>
+            <br />
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="戻る" />
         </div>
     </form>
 </body>

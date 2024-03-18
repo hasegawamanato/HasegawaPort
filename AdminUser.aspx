@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
         ユーザー一覧<br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UserId" DataSourceID="SqlDataSource1" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" CssClass="auto-style1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="574px" OnRowCommand="GridView1_RowCommand">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UserId" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" CssClass="auto-style1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="574px" OnRowCommand="GridView1_RowCommand" ForeColor="Black">
             <Columns>
                 <asp:BoundField DataField="UserId" HeaderText="ID" ReadOnly="True" SortExpression="UserId" />
                 <asp:BoundField DataField="name" HeaderText="名前" SortExpression="name" />
@@ -35,15 +35,15 @@
     </ItemTemplate>
 </asp:TemplateField>
             </Columns>
-            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
-            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
-            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#FFF1D4" />
-            <SortedAscendingHeaderStyle BackColor="#B95C30" />
-            <SortedDescendingCellStyle BackColor="#F1E5CE" />
-            <SortedDescendingHeaderStyle BackColor="#93451F" />
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle ForeColor="Black" HorizontalAlign="Left" BackColor="#CCCCCC" />
+            <RowStyle BackColor="White" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserId], [name], [mail] FROM [User_Login]"></asp:SqlDataSource>
         <br />
