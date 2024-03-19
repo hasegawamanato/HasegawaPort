@@ -35,7 +35,7 @@
             color: #FF3300;
         }
         .auto-style8 {
-            height: 376px;
+            height: 423px;
         }
         .auto-style9 {
             height: 20px;
@@ -48,10 +48,18 @@
             width: 128px;
             background-color: #CCFFCC;
         }
+        .auto-style12 {
+            color: #FFFFFF;
+        }
+        .auto-style13 {
+            color: #CC3300;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server" class="auto-style8">
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="登録をキャンセルする" BackColor="Black" CssClass="auto-style12" />
+        <br />
     <table class="auto-style1">
         <tr>
             <td class="auto-style4" style="font-family: 游明朝; background-color: #00FFFF;">新規ユーザー登録</td>
@@ -74,7 +82,7 @@
             <td class="auto-style3" style="font-family: 游明朝; text-align: right;">パスワード：</td>
             <td class="auto-style9" style="font-family: 游明朝">
                 <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox1_TextChanged" Width="199px" TextMode="Password" MaxLength="30"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="auto-style7" ErrorMessage="パスワードを入力してください" OnDataBinding="Button1_Click1" ValidationGroup="new"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="auto-style7" ErrorMessage="パスワードを入力してください" OnDataBinding="Button1_Click1" ValidationGroup="new" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -108,10 +116,9 @@
     </table>
         <asp:Label ID="Label1" runat="server" CssClass="auto-style7"></asp:Label>
         <br />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button1" runat="server" Text="登録" OnClick="Button1_Click1" ValidationGroup="new" />
-        <div>
-        </div>
-    </form>
+        <asp:Label ID="Label2" runat="server" CssClass="auto-style13" Visible="False"></asp:Label>
+        <br />
+&nbsp;<asp:Button ID="Button1" runat="server" Text="登録" OnClick="Button1_Click1" ValidationGroup="new" BackColor="Black" CssClass="auto-style12" Height="38px" Width="81px" />
+        &nbsp;</form>
 </body>
 </html>

@@ -20,35 +20,42 @@
         .auto-style4 {
             height: 20px;
         }
+        .auto-style5 {
+            color: #FFFFFF;
+        }
+        .auto-style6 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            登録情報変更画面<br />
-            <br />
+            <h1>登録情報変更画面</h1>
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="ユーザー情報を変更しない" BackColor="Black" BorderStyle="None" CssClass="auto-style5" />
             <br />
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FF00">ユーザーID</td>
+                    <td class="auto-style2" style="background-color: #00FFFF">ユーザーID</td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="background-color: #00FF00">パスワード</td>
+                    <td class="auto-style3" style="background-color: #00FFFF">パスワード</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FF00">メールアドレス</td>
+                    <td class="auto-style2" style="background-color: #00FFFF">メールアドレス</td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FF00">名前</td>
+                    <td class="auto-style2" style="background-color: #00FFFF">名前</td>
                     <td>
                         <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                     </td>
@@ -56,8 +63,7 @@
             </table>
             <br />
             <br />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="変更" />
+&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="変更" CssClass="auto-style6" Height="30px" Width="59px" />
         </div>
     </form>
 </body>

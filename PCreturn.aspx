@@ -21,13 +21,18 @@
         .auto-style6 {
             color: #FF3300;
         }
+        .auto-style7 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            PCID:<asp:Label ID="Label1" runat="server"></asp:Label>
-            のスペック詳細<br />
+            <h1>PCID:<asp:Label ID="Label1" runat="server"></asp:Label>
+            のスペック詳細</h1>
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="返却キャンセル" CssClass="auto-style7" />
             <br />
             <table class="auto-style1">
                 <tr>
@@ -79,11 +84,8 @@
                     </td>
                 </tr>
             </table>
-            <span class="auto-style6">※返却は担当者に返却してから返却ボタンを押してください。</span><br />
-            &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button1" runat="server" Text="返却" OnClick="Button1_Click" />
-            <br />
-            <br />
+            <span class="auto-style6">※返却は担当者に返却してから返却ボタンを押してください。<br />
+            </span><asp:Button ID="Button1" runat="server" Text="返却" OnClick="Button1_Click" CssClass="auto-style7" Height="34px" Width="60px" />
         </div>
     </form>
 </body>

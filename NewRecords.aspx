@@ -6,12 +6,19 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FF3300;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <h1>PC一覧画面</h1>
             レンタルしたいPCを選択ください。<br />
+            <asp:Label ID="Label1" runat="server" CssClass="auto-style1" Visible="False"></asp:Label>
+            <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Pcid" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />

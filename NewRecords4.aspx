@@ -6,6 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,7 +19,7 @@
         <br />
         申請日に担当者よりPCをお渡しいたしますので少々お待ちください。<br />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="ホーム" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="ホーム" CssClass="auto-style1" />
     </form>
 </body>
 </html>

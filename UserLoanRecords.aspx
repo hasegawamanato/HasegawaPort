@@ -15,6 +15,10 @@
         .auto-style3 {
             color: #FF3300;
         }
+        .auto-style5 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
@@ -65,16 +69,16 @@
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="スペックの詳細" />
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="戻る" CssClass="auto-style5" />
+&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="スペックの詳細" CssClass="auto-style5" />
             　
             <br />
             <h2>
                 <asp:Label ID="Label6" runat="server" CssClass="auto-style3"></asp:Label>
             </h2>
             <br />
-            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PCのレンタルはこちら" />
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="戻る" CssClass="auto-style5" />
+&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PCのレンタルはこちら" CssClass="auto-style5" />
             <br />
             <br />
         </div>

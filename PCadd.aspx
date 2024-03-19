@@ -30,73 +30,76 @@
         .auto-style7 {
             height: 23px;
         }
+        .auto-style8 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <h1>新規PC追加画面</h1>
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="キャンセル" CssClass="auto-style8" Width="201px" />
         <table class="auto-style1">
             <tr>
-                <td class="auto-style3" style="text-align: right; background-color: #CCFF99;">PCID：</td>
+                <td class="auto-style3" style="text-align: left; background-color: #00FFFF;">PCID</td>
                 <td class="auto-style4">
                     <asp:TextBox ID="TextBox10" runat="server" Width="399px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox10" CssClass="auto-style5" ErrorMessage="PCIDが入力されていません" ValidationGroup="new"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">PC名：</td>
+                <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">PC名</td>
                 <td>
                     <asp:TextBox ID="TextBox2" runat="server" Width="400px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="auto-style5" ErrorMessage="PC名が入力されていません" ValidationGroup="new"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style6" style="text-align: right; background-color: #CCFF99;">メーカー：</td>
+                <td class="auto-style6" style="text-align: left; background-color: #00FFFF;">メーカー</td>
                 <td class="auto-style7">
                     <asp:TextBox ID="TextBox3" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">CPU：</td>
+                <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">CPU</td>
                 <td>
                     <asp:TextBox ID="TextBox4" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">メモリ：</td>
+                <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">メモリ</td>
                 <td>
                     <asp:TextBox ID="TextBox5" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">SSD：</td>
+                <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">SSD</td>
                 <td>
                     <asp:TextBox ID="TextBox6" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">HDD：</td>
+                <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">HDD</td>
                 <td>
                     <asp:TextBox ID="TextBox7" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">購入日：</td>
-                <td>
+                <td class="auto-style6" style="text-align: left; background-color: #00FFFF;">購入日</td>
+                <td class="auto-style7">
                     <asp:TextBox ID="TextBox8" runat="server" Width="400px" TextMode="Date"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2" style="text-align: right; background-color: #CCFF99;">コメント：</td>
+                <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">コメント</td>
                 <td>
                     <asp:TextBox ID="TextBox9" runat="server" Width="400px"></asp:TextBox>
                 </td>
             </tr>
         </table>
         <span class="auto-style5">PCID,PC名は入力必須です。<br />
-        </span>
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="height: 21px" Text="戻る" />
-&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登録" ValidationGroup="new" />
+        </span><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登録" ValidationGroup="new" CssClass="auto-style8" Height="28px" Width="68px" />
     </form>
 </body>
 </html>

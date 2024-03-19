@@ -44,16 +44,11 @@ namespace Login
                         con.Open();
                         cmd.ExecuteNonQuery();
                     }
-                } catch(Exception ex)
+                }
+                finally
                 {
-                    
-                } 
-                
-                    
-                
-                
 
-                
+                }
             }
 
             // ページを遷移

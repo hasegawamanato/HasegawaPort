@@ -34,8 +34,32 @@ namespace YourNamespace
         {
             // 削除処理を実行
             int pcid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values["Pcid"]);
-            // 削除処理を実行するSQLクエリを記述する
-            
+
+            // LoanRecordsテーブルから該当するPCのレコードが存在するかを確認
+            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                con.Open();
+                try
+                {
+                    string selectCommand = "SELECT COUNT(*) FROM LoanRecords WHERE DeviceID = @DeviceID";
+                    using (SqlCommand cmd = new SqlCommand(selectCommand, con))
+                    {
+                        cmd.Parameters.AddWithValue("@DeviceID", pcid);
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            // LoanRecordsにレコードが存在する場合、メッセージを表示して削除操作を中止
+                            Label1.Text = "このPCは誰かが借りています。削除する場合は返却させてください。";
+                            return;
+                        }
+                    }
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)

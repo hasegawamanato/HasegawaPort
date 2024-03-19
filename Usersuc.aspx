@@ -6,13 +6,20 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            ユーザー情報の変更が完了しました。<br />
+            <h1>ユーザー情報の変更が完了しました。</h1>
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="ユーザー一覧" />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="ユーザー一覧" CssClass="auto-style1" Height="37px" Width="132px" />
         </div>
     </form>
 </body>

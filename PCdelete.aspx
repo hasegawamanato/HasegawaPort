@@ -20,14 +20,22 @@
         .auto-style4 {
             width: 114px;
         }
+        .auto-style5 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+        .auto-style6 {
+            font-size: large;
+            color: #FF3300;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            PC削除画面<br />
-            <br />
-            このPCを削除しますか？<br />
+            <h1>PC削除画面</h1>
+            <span class="auto-style6">このPCを削除しますか？</span><br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="キャンセル" CssClass="auto-style5" Width="179px" />
             <br />
             <table class="auto-style1">
                 <tr>
@@ -87,8 +95,7 @@
             </table>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="戻る" />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="削除" />
+&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="削除" CssClass="auto-style5" Height="35px" Width="68px" />
         </div>
     </form>
 </body>

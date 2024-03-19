@@ -67,6 +67,15 @@ namespace Login
         }
         protected void Button1_Click1(object sender, EventArgs e)
         {
+            // パスワードの文字数が8以下であるかを確認
+            if (TextBox3.Text.Length <8)
+            {
+                // パスワードが8文字以下の場合、エラーメッセージを表示して処理を終了
+                Label2.Visible = true;
+                Label2.Text = "パスワードは8～20桁で入力してください。";
+                return;
+            }
+
             string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -82,7 +91,7 @@ namespace Login
                         if (count > 0)
                         {
                             // 重複が見つかった場合、エラーメッセージを表示して処理を終了
-                            Label1.Text="このユーザーIDは既に登録されています。別のユーザーIDを入力してください。";
+                            Label1.Text = "このユーザーIDは既に登録されています。別のユーザーIDを入力してください。";
                             return;
                         }
                     }
@@ -112,5 +121,6 @@ namespace Login
         {
             Server.Transfer("Login3.aspx");
         }
+
     }
 }

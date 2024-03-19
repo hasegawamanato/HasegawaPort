@@ -20,12 +20,15 @@
         .auto-style4 {
             height: 21px;
         }
+        .auto-style5 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        貸出情報<br />
-        <br />
+        <h1>貸出情報</h1>
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2" style="text-align: left; background-color: #00FFFF;">貸出ID</td>
@@ -54,7 +57,7 @@
         </table>
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="戻る" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="戻る" CssClass="auto-style5" Width="57px" />
     </form>
 </body>
 </html>

@@ -6,6 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,8 +19,8 @@
             <h1>登録が完了しました。</h1>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PC情報管理画面" />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="新規PC登録画面" />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PC情報管理画面" CssClass="auto-style1" />
+            &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="新規PC登録画面" CssClass="auto-style1" />
 
 
 

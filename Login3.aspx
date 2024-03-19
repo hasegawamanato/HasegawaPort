@@ -16,11 +16,18 @@
         .auto-style3 {
             color: #FF3300;
         }
+        .auto-style4 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+        .auto-style5 {
+            background-color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="auto-style5">
             <h1>ログイン画面</h1>
             <table class="auto-style1">
                 <tr>
@@ -39,8 +46,8 @@
             <asp:Label ID="ErrorMessageLabel" runat="server" CssClass="auto-style3"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="新規登録" />
-&nbsp;<asp:Button ID="LoginButton" runat="server" OnClick="LoginButton_Click1" Text="ログイン" />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="新規登録" CssClass="auto-style4" />
+&nbsp;<asp:Button ID="LoginButton" runat="server" OnClick="LoginButton_Click1" Text="ログイン" CssClass="auto-style4" />
         </div>
     </form>
 </body>

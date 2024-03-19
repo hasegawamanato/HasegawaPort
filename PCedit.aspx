@@ -12,6 +12,10 @@
         .auto-style2 {
             width: 64px;
         }
+        .auto-style3 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
     </style>
 </head>
 <body>
@@ -19,6 +23,8 @@
         <div>
             PCID：<asp:Label ID="Label1" runat="server"></asp:Label>
             の情報編集<br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="戻る" CssClass="auto-style3" Height="24px" Width="153px" />
             <br />
             <table>
                 <tr>
@@ -47,7 +53,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2" style="background-color: #00FFFF">購入日:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td>
+                    <td class="auto-style1"><asp:TextBox ID="TextBox8" runat="server" TextMode="Date"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="auto-style2" style="background-color: #00FFFF">コメント:</td>
@@ -56,8 +62,7 @@
                 </table>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="戻る" />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="更新" />
+&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="更新" CssClass="auto-style3" Height="38px" Width="67px" />
         </div>
     </form>
 </body>

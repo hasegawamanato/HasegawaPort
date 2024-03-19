@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -38,6 +40,33 @@ namespace Login
                 Session["SelectedPurchaseDate"] = selectedRow.Cells[8].Text;
                 Session["SelectedComment"] = selectedRow.Cells[9].Text;
 
+            string pcId = selectedRow.Cells[1].Text;
+            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                con.Open();
+                try
+                {
+                    string selectCommand = "SELECT COUNT(*) FROM LoanRecords WHERE DeviceID = @DeviceID";
+                    using (SqlCommand cmd = new SqlCommand(selectCommand, con))
+                    {
+                        cmd.Parameters.AddWithValue("@DeviceID", pcId);
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            // LoanRecordsにレコードが存在する場合、メッセージを表示して処理を終了
+                            Label1.Visible = true;
+                            Label1.Text = "このPCはすでに誰かが使用しています。";
+                            return;
+                        }
+                    }
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
                 // NewRecords2.aspx ページにリダイレクト
                 Response.Redirect("NewRecords2.aspx");
          }
