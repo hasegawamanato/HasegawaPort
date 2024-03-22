@@ -64,7 +64,6 @@
                 </td>
             </tr>
         </table>
-        <h1>PCレンタルサービス</h1>
     </form>
 </body>
 </html>

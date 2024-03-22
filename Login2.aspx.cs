@@ -14,7 +14,9 @@ namespace Login
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        
+
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
             Server.Transfer("Login3.aspx");
         }
