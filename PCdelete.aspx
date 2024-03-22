@@ -28,6 +28,9 @@
             font-size: large;
             color: #FF3300;
         }
+        .auto-style7 {
+            color: #FF3300;
+        }
     </style>
 </head>
 <body>
@@ -93,9 +96,11 @@
                     </td>
                 </tr>
             </table>
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="削除" CssClass="auto-style5" Height="35px" Width="68px" />
             <br />
+            <asp:Label ID="Label10" runat="server" CssClass="auto-style7"></asp:Label>
             <br />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="削除" CssClass="auto-style5" Height="35px" Width="68px" />
+            <asp:Button ID="Button3" runat="server" CssClass="auto-style5" Height="35px" OnClick="Button3_Click" Text="戻る" Visible="False" Width="68px" />
         </div>
     </form>
 </body>

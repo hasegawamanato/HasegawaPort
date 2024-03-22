@@ -39,17 +39,9 @@ namespace Login
                         Response.Redirect("Useredit.aspx?UserId=" + userId + "&Name=" + name + "&Mail=" + mail);
                         break;
                     case "Delete":
-                        // ユーザに関連する LoanRecords を確認
-                        if (CheckLoanRecordsExist(userId))
-                        {
-                            // 貸出情報がある場合はメッセージを表示
-                            Label1.Text = "このユーザには貸出情報があります。削除できません。";
-                        }
-                        else
-                        {
+                       
                             // 貸出情報がない場合は削除画面に遷移
                             Response.Redirect("Userdelete.aspx?UserId=" + userId + "&Name=" + name + "&Mail=" + mail);
-                        }
                         break;
                     default:
                         break;
@@ -57,34 +49,7 @@ namespace Login
             }
         }
         // LoanRecords テーブルにユーザに関連するレコードが存在するかを確認するメソッド
-        private bool CheckLoanRecordsExist(string userId)
-        {
-            bool recordsExist = false;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(strCon))
-            {
-                string query = "SELECT COUNT(*) FROM LoanRecords WHERE UserId = @UserId";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@UserId", userId);
-                    connection.Open();
-                    int count = Convert.ToInt32(command.ExecuteScalar());
-                    if (count > 0)
-                    {
-                        recordsExist = true;
-                    }
-                }
-            }
-
-            return recordsExist;
-        }
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         protected void Button2_Click(object sender, EventArgs e)
         {
             Server.Transfer("AdminPC.aspx");

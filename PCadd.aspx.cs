@@ -31,6 +31,12 @@ namespace Login
 
             // データベースへの接続文字列
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            if (IsPCIDExists(connectionString, pcid))
+            {
+                // PCIDが既に存在する場合はエラーメッセージを表示して処理を終了
+                Label1.Text = "このPCIDは既に登録済です。別のPCIDを入力してください。";
+                return;
+            }
 
             // SQLコマンドの作成
             string query = "INSERT INTO Computers (Pcid, Pcname, Manufacturer, CPU, MemoryCapacity, SSD, HDD, PurchaseDate, Comment) " +
@@ -65,6 +71,20 @@ namespace Login
         protected void Button2_Click(object sender, EventArgs e)
         {
             Server.Transfer("AdminPC.aspx");
+        }
+        private bool IsPCIDExists(string connectionString, string pcid)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM Computers WHERE Pcid = @Pcid";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Pcid", pcid);
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
         }
     }
 }

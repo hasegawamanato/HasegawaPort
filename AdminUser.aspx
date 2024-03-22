@@ -55,7 +55,7 @@
         ユーザー一覧<br />
         <asp:Label ID="Label1" runat="server" CssClass="auto-style2"></asp:Label>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UserId" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" CssClass="auto-style1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="574px" OnRowCommand="GridView1_RowCommand" ForeColor="Black">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="UserId" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" CssClass="auto-style1" Width="574px" OnRowCommand="GridView1_RowCommand" ForeColor="Black">
             <Columns>
                 <asp:BoundField DataField="UserId" HeaderText="ID" ReadOnly="True" SortExpression="UserId" />
                 <asp:BoundField DataField="name" HeaderText="名前" SortExpression="name" />
@@ -81,8 +81,14 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserId], [name], [mail] FROM [User_Login]"></asp:SqlDataSource>
-        <br />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+    SelectCommand="SELECT [UserId], [name], [mail] FROM [User_Login]"
+    DeleteCommand="DELETE FROM [User_Login] WHERE [UserId] = @UserId">
+    <DeleteParameters>
+        <asp:Parameter Name="UserId" Type="Int32"/>
+    </DeleteParameters>
+</asp:SqlDataSource>
+
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="戻る" CssClass="auto-style6" Height="35px" Width="71px" />
     </form>

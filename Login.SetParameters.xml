@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="https://haswgawaport.azurewebsites.net/" />
+  <setParameter name="ConnectionString-Web.config Connection String" value="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Member.mdf;Integrated Security=True" />
+  <setParameter name="ConnectionString-Deployment Connection String" value="" />
+</parameters>

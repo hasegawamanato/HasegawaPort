@@ -34,12 +34,15 @@
             color: #000000;
             background-color: #66FFFF;
         }
+        .auto-style8 {
+            font-size: large;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            レンタル期間を入力してください。<br />
+            <span class="auto-style8"><strong>レンタル期間を入力してください。</strong></span><br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="レンタルをキャンセルする" Width="202px" CssClass="auto-style6" />
             <br />
             <table class="auto-style1">
@@ -76,7 +79,7 @@
             </table>
             <span class="auto-style5">※レンタル開始日はレンタル希望日の3営業日前より申請してください。</span><br />
             <br />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="レンタル確定" Width="127px" ValidationGroup="new" CssClass="auto-style6" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="レンタル確定" Width="127px" ValidationGroup="new" CssClass="auto-style6" />
             <br />
         </div>
     </form>

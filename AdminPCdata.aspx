@@ -9,32 +9,15 @@
 
         .auto-style1 {
             width: 100%;
-            height: 40px;
-            color: #FFFFFF;
-            margin-bottom: 0px;
-            background-color: #000000;
         }
         .auto-style2 {
             width: 60px;
-            height: 51px;
         }
         .auto-style3 {
             width: 125px;
-            height: 51px;
         }
         .auto-style4 {
             width: 95px;
-            height: 51px;
-        }
-        .auto-style5 {
-            color: #FFFFFF;
-            background-color: #000000;
-        }
-        .auto-style6 {
-            height: 51px;
-        }
-        .auto-style7 {
-            color: #FF3300;
         }
     </style>
 </head>
@@ -44,22 +27,19 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2"><strong>
-                        <asp:Button ID="Button1" runat="server" BorderStyle="None" OnClick="Button1_Click" Text="Home" Width="101px" CssClass="auto-style5" />
+                        <asp:Button ID="Button1" runat="server" BorderStyle="None" OnClick="Button1_Click" Text="Home" Width="101px" />
                         </strong></td>
                     <td class="auto-style4">
-                        <asp:Button ID="Button6" runat="server" BorderStyle="None" OnClick="Button6_Click" Text="PC情報管理" CssClass="auto-style5" />
+                        <asp:Button ID="Button6" runat="server" BorderStyle="None" OnClick="Button6_Click" Text="PC情報管理" />
                     </td>
                     <td class="auto-style3">
-                        <asp:Button ID="Button2" runat="server" BorderStyle="None" Text="ユーザー管理" OnClick="Button2_Click" CssClass="auto-style5" />
+                        <asp:Button ID="Button2" runat="server" BorderStyle="None" Text="ユーザー管理" OnClick="Button2_Click" />
                     </td>
-                    <td class="auto-style6">
-                        </td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
             </table>
-            <h1>&nbsp;PC一覧</h1>
-            <p>
-                <asp:Label ID="Label1" runat="server" CssClass="auto-style7"></asp:Label>
-            </p>
+            <h1>PC一覧</h1>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" DataKeyNames="Pcid" DataSourceID="SqlDataSource2" Width="1200px" OnRowCommand="GridView1_RowCommand" CellSpacing="2" ForeColor="Black">
     <Columns>
         <asp:BoundField DataField="Pcid" HeaderText="ID" ReadOnly="True" SortExpression="Pcid" />

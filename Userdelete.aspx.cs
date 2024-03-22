@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -31,28 +32,45 @@ namespace Login
         {
             string userId = Request.QueryString["UserId"];
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string query = "DELETE FROM User_Login WHERE UserId = @UserId";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            string loanQuery = "SELECT COUNT(*) FROM LoanRecords WHERE UserId = @UserId";
+            int loanCount = 0;
+
+            using (SqlConnection loanConnection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM User_Login WHERE UserId = @UserId";
-                try
+                using (SqlCommand loanCommand = new SqlCommand(loanQuery, loanConnection))
                 {
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@UserId", userId);
-
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                    }
+                    loanCommand.Parameters.AddWithValue("@UserId", userId);
+                    loanConnection.Open();
+                    loanCount = (int)loanCommand.ExecuteScalar();
                 }
-                finally
-                {
+            }
+            if (loanCount > 0)
+            {
+                Label4.Text = "このユーザにはレンタル情報が存在するため、情報を削除することができません。";
+                Button1.Visible = false;
+                Button2.Visible = true;
+                return;
+            }
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    connection.Open();
+                    command.ExecuteNonQuery();
                 }
             }
 
             // ページを遷移
             Response.Redirect("Usersuc.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminUser.aspx");
         }
     }
 }

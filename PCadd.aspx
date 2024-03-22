@@ -99,6 +99,8 @@
             </tr>
         </table>
         <span class="auto-style5">PCID,PC名は入力必須です。<br />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <br />
         </span><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="登録" ValidationGroup="new" CssClass="auto-style8" Height="28px" Width="68px" />
     </form>
 </body>

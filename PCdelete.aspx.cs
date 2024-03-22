@@ -48,10 +48,34 @@ namespace Login
         {
             // データベースから選択されたPCデータを削除する
             string pcid = Label1.Text;
-
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             string query = "DELETE FROM Computers WHERE Pcid = @Pcid";
 
+            // LoanRecordsテーブルから貸し出し中のデータを検索
+            string loanQuery = "SELECT COUNT(*) FROM LoanRecords WHERE DeviceID = @Pcid";
+            int loanCount = 0;
+
+            using (SqlConnection loanConnection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand loanCommand = new SqlCommand(loanQuery, loanConnection))
+                {
+                    loanCommand.Parameters.AddWithValue("@Pcid", pcid);
+                    loanConnection.Open();
+                    loanCount = (int)loanCommand.ExecuteScalar();
+                }
+            }
+
+            // 貸出中のデータが存在するかどうかでラベルのテキストを設定
+            if (loanCount > 0)
+            {
+                Label10.Text = "このPCは使用者がいるため、情報を削除することができません。";
+                Button2.Visible= false;
+                Button3.Visible= true;
+
+                return;
+            }
+
+            // 貸出中のデータが存在しない場合のみPCを削除してリダイレクトする
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -61,8 +85,14 @@ namespace Login
                     command.ExecuteNonQuery();
                 }
             }
-            // 削除後はAdminPCdata.aspxに戻る
+
+            
             Response.Redirect("PCsuc.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminPCdata.aspx");
         }
     }
 }
