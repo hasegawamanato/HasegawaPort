@@ -108,22 +108,22 @@
             <div class="input-container">
                 <span class="input-label">メールアドレス:</span>
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="input-field"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" CssClass="error-message" ErrorMessage="メールアドレスを入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" CssClass="error-message" ErrorMessage="正しい形式のメールアドレスを入力してください" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="new"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" CssClass="error-message" ErrorMessage="メールアドレスを入力してください" ValidationGroup="new" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" CssClass="error-message" ErrorMessage="正しい形式のメールアドレスを入力してください" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="new" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
             <div class="input-container">
                 <span class="input-label">メールアドレス確認:</span>
                 <asp:TextBox ID="TextBox5" runat="server" CssClass="input-field"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox5" CssClass="error-message" ErrorMessage="確認用メールアドレスを入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox3" ControlToValidate="TextBox5" CssClass="error-message" ErrorMessage="メールアドレスが一致していません" ValidationGroup="new"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox5" CssClass="error-message" ErrorMessage="確認用メールアドレスを入力してください" ValidationGroup="new" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox3" ControlToValidate="TextBox5" CssClass="error-message" ErrorMessage="メールアドレスが一致していません" ValidationGroup="new" Display="Dynamic"></asp:CompareValidator>
             </div>
             <div class="input-container">
                 <span class="input-label">名前:</span>
                 <asp:TextBox ID="TextBox4" runat="server" CssClass="input-field"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox4" CssClass="error-message" ErrorMessage="名前を入力してください"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox4" CssClass="error-message" ErrorMessage="名前を入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
             </div>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="変更" CssClass="button" ValidationGroup="new" />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="キャンセル" CssClass="button" ValidationGroup="new" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="キャンセル" CssClass="button" />
         </div>
     </form>
 </body>

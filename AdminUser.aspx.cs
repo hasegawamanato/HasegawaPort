@@ -50,10 +50,7 @@ namespace Login
         }
         // LoanRecords テーブルにユーザに関連するレコードが存在するかを確認するメソッド
         
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("AdminPC.aspx");
-        }
+ 
 
         protected void Button5_Click1(object sender, EventArgs e)
         {
@@ -66,6 +63,12 @@ namespace Login
         }
 
         protected void Button6_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminPC.aspx");
+        }
+
+        
+        protected void Button7_Click(object sender, EventArgs e)
         {
             Server.Transfer("AdminHome.aspx");
         }

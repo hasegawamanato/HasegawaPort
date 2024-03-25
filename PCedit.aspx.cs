@@ -81,7 +81,7 @@ namespace YourNamespace
                     connection.Close();
                 }
             }
-            Server.Transfer("AdminPCdata.aspx");
+            Server.Transfer("PCsuc.aspx");
         }
     }
 }

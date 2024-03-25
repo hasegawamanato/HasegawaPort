@@ -106,8 +106,8 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="header-buttons" style="justify-content: flex-start;">
+    <asp:Button ID="Button7" runat="server" CssClass="btn btn-primary" OnClick="Button7_Click" Text="Home" />
                 <asp:Button ID="Button6" runat="server" CssClass="btn btn-info" OnClick="Button6_Click" Text="PC情報管理" />
-                <asp:Button ID="Button2" runat="server" CssClass="btn btn-info" Text="ユーザー管理" OnClick="Button2_Click" />
                 <asp:Button ID="Button5" runat="server" CssClass="btn btn-danger" OnClick="Button5_Click1" Text="ログアウト" />
             </div>
             <h1>ユーザー一覧</h1>
