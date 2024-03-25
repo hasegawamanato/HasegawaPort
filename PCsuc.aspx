@@ -4,23 +4,64 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PC情報変更完了</title>
     <style type="text/css">
-        .auto-style1 {
-            color: #FFFFFF;
-            font-size: large;
-            background-color: #000000;
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .message-container {
+            margin-top: 100px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .icon {
+            font-size: 48px;
+            color: #28a745; /* チェックマークの色 */
+        }
+        h1 {
+            color: #333333;
+        }
+        p {
+            color: #666666;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .btn {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 150px;
+        }
+        #Button1 {
+            background-color: #007bff; /* PC一覧ボタンの背景色 */
+            color: #ffffff; /* PC一覧ボタンのテキスト色 */
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="message-container">
+            <span class="icon">&#10003;</span>
             <h1>PC情報を変更しました。</h1>
-            <br />
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PC一覧" CssClass="auto-style1" Height="33px" Width="99px" />
+            <div class="button-container">
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="PC一覧" CssClass="btn" />
+            </div>
         </div>
     </form>
 </body>

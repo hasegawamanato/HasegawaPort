@@ -65,6 +65,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="auto-style2">
+            <span class="icon">&#10003;</span>
             <h1>返却手続きが完了しました。</h1>
             <span class="auto-style3">ご利用いただき、誠にありがとうございました。<br />
             <br />

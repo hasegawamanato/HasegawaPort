@@ -56,6 +56,19 @@
             color: #dc3545;
             margin-top: 10px;
         }
+        .new-registration-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745; /* デフォルトの色 */
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .new-registration-button:hover {
+            background-color: #218838; /* ホバー時の色 */
+        }
     </style>
 </head>
 <body>
@@ -72,7 +85,7 @@
                 <asp:Label ID="ErrorMessageLabel" runat="server" CssClass="error-message"></asp:Label>
 
                 <asp:Button ID="LoginButton" runat="server" OnClick="LoginButton_Click1" Text="ログイン" CssClass="submit-button" />
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="新規登録" CssClass="submit-button" style="margin-top: 10px; background-color: #28a745;" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="新規登録" CssClass="submit-button new-registration-button" style="margin-top: 10px;" />
             </div>
         </div>
     </form>

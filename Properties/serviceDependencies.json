@@ -4,6 +4,7 @@
       "type": "secrets"
     },
     "mssql1": {
+      "ignored": "true",
       "type": "mssql",
       "connectionId": "ConnectionStrings",
       "dynamicId": null

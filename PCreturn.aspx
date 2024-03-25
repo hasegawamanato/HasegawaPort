@@ -10,6 +10,7 @@
         body {
             background-color: #ffffff; /* 白色の背景 */
             color: #000000; /* 黒色のテキスト */
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center; /* コンテンツを中央に配置 */
             align-items: flex-start; /* コンテンツをページの上部に配置 */
@@ -18,101 +19,125 @@
             padding-top: 20px; /* ページの上部に余白を追加 */
         }
 
-        .auto-style1 {
-            width: 67%;
+        .container {
+            width: 80%;
+            margin:0 auto;
         }
-        .auto-style2 {
-            height: 20px;
-            background-color: #FFFFFF;
+
+        h1 {
+            color: #ffffff; /* 白色のテキスト */
+            background-color: #000000; /* 黒色の背景 */
+            padding: 20px;
+            margin-bottom: 20px;
         }
-        .auto-style5 {
-            height: 20px;
-            width: 99px;
-        }
-        .auto-style6 {
-            color: #FF3300;
-        }
-        .auto-style7 {
+
+        .button {
             color: #ffffff; /* 白色のテキスト */
             background-color: #000000; /* 黒色の背景 */
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             transition: background-color 0.3s; /* ホバー時のトランジション */
+            margin-bottom: 20px;
         }
 
-        .auto-style7:hover {
+        .button:hover {
             background-color: #333333; /* ホバー時の背景色をグレーに変更 */
         }
 
-        /* テーブルの背景色を変更 */
         table {
+            width: 100%;
             background-color: #f0f0f0; /* グレーの背景 */
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
-        .auto-style8 {
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text-align: left;
+            background-color: #000000; /* 黒色の背景 */
+            color: #ffffff; /* 白色のテキスト */
+        }
+
+        .message {
+            font-size: 18px;
+            color: #FF3300;
+        }
+        .auto-style1 {
+            width: 13%;
+        }
+        .auto-style2 {
+            background-color: #FFFFFF;
+        }
+        .auto-style3 {
+            color: #000000;
+        }
+        .auto-style4 {
+            color: #000000;
             background-color: #FFFFFF;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h1>PCID:<asp:Label ID="Label1" runat="server"></asp:Label>
-                のスペック詳細</h1>
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="返却キャンセル" CssClass="auto-style7" />
+        <div class="container">
+            <h1 class="auto-style2"><span class="auto-style3">PCID:</span><asp:Label ID="Label1" runat="server" CssClass="auto-style4"></asp:Label>
+                <span class="auto-style3">のスペック詳細</span></h1>
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="返却キャンセル" CssClass="button" Width="246px" />
             <br />
-            <table class="auto-style1">
+            <table>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">PC名</td>
+                    <th class="auto-style1">PC名</th>
                     <td class="auto-style2">
-                        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">メーカー</td>
+                    <th class="auto-style1">メーカー</th>
                     <td class="auto-style2">
-                        <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">CPU</td>
-                    <td class="auto-style8">
-                        <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                    <th class="auto-style1">CPU</th>
+                    <td class="auto-style2">
+                        <asp:Label ID="Label4" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">メモリ</td>
-                    <td class="auto-style8">
-                        <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+                    <th class="auto-style1">メモリ</th>
+                    <td class="auto-style2">
+                        <asp:Label ID="Label5" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">SSD</td>
-                    <td class="auto-style8">
-                        <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+                    <th class="auto-style1">SSD</th>
+                    <td class="auto-style2">
+                        <asp:Label ID="Label6" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">HDD</td>
-                    <td class="auto-style8">
-                        <asp:Label ID="Label7" runat="server" Text=""></asp:Label>
+                    <th class="auto-style1">HDD</th>
+                    <td class="auto-style2">
+                        <asp:Label ID="Label7" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">購入日</td>
-                    <td class="auto-style8">
-                        <asp:Label ID="Label8" runat="server" Text=""></asp:Label>
+                    <th class="auto-style1">購入日</th>
+                    <td class="auto-style2">
+                        <asp:Label ID="Label8" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5" style="text-align: left; background-color: #000000; color: #ffffff;">コメント</td>
-                    <td class="auto-style8">
-                        <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
+                    <th class="auto-style1">コメント</th>
+                    <td class="auto-style2">
+                        <asp:Label ID="Label9" runat="server" Text="" CssClass="auto-style3"></asp:Label>
                     </td>
                 </tr>
             </table>
-            <span class="auto-style6">※返却は担当者に返却してから返却ボタンを押してください。<br />
-            </span><asp:Button ID="Button1" runat="server" Text="返却" OnClick="Button1_Click" CssClass="auto-style7" />
+            <span class="message">※返却は担当者に返却してから返却ボタンを押してください。<br /></span>
+            <asp:Button ID="Button1" runat="server" Text="返却" OnClick="Button1_Click" CssClass="button" Width="253px" />
         </div>
     </form>
 </body>

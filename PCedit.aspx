@@ -6,63 +6,120 @@
 <head runat="server">
     <title>PC Edit</title>
     <style type="text/css">
-        .auto-style1 {
-            width: 280px;
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
-        .auto-style2 {
-            width: 64px;
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .auto-style3 {
-            color: #FFFFFF;
+
+        h1 {
+            color: #000000;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #FF3300;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text-align: left;
+            background-color: #00FFFF;
+        }
+
+        th {
+            width: 109px;
+        }
+
+        .back-button {
             background-color: #000000;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #666666;
+        }
+
+        .auto-style2 {
+            width: 109px;
+            background-color: #FFFFFF;
+        }
+
+        .auto-style4 {
+            background-color: #66FFFF;
+            width: 32px;
+        }
+        .auto-style5 {
+            color: #FF3300;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            PCID：<asp:Label ID="Label1" runat="server"></asp:Label>
-            の情報編集<br />
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="戻る" CssClass="auto-style3" Height="24px" Width="153px" />
-            <br />
+        <div class="container">
+            <h1>PCID：<asp:Label ID="Label1" runat="server"></asp:Label>の情報編集</h1>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="戻る" CssClass="back-button" Width="153px" />
             <table>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">PC名:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">PC名:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox2" CssClass="auto-style5" ErrorMessage="変更後のPC名を入力してください" ValidationGroup="new"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">メーカー:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">メーカー:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">CPU:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">CPU:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">メモリ:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox5" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">メモリ:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox5" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">SSD:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox6" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">SSD:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox6" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">HDD:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox7" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">HDD:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox7" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">購入日:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox8" runat="server" TextMode="Date"></asp:TextBox></td>
+                    <th class="auto-style4">購入日:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox8" runat="server" TextMode="Date"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" style="background-color: #00FFFF">コメント:</td>
-                    <td class="auto-style1"><asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td>
+                    <th class="auto-style4">コメント:</th>
+                    <td class="auto-style2"><asp:TextBox ID="TextBox9" runat="server" MaxLength="40" Width="279px"></asp:TextBox></td>
                 </tr>
-                </table>
+            </table>
             <br />
-            <br />
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="更新" CssClass="auto-style3" Height="38px" Width="67px" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="更新" CssClass="back-button" Width="153px" />
         </div>
     </form>
 </body>

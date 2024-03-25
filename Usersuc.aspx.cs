@@ -16,7 +16,7 @@ namespace Login
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Server.Transfer("AdminUser.aspx");
+            Server.Transfer("Welcome.aspx");
         }
     }
 }

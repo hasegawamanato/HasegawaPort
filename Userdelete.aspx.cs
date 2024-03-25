@@ -51,6 +51,7 @@ namespace Login
                 Label4.Text = "このユーザにはレンタル情報が存在するため、情報を削除することができません。";
                 Button1.Visible = false;
                 Button2.Visible = true;
+                Button3.Visible = false;
                 return;
             }
 
@@ -69,6 +70,11 @@ namespace Login
         }
 
         protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AdminUser.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
         {
             Server.Transfer("AdminUser.aspx");
         }

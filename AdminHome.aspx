@@ -35,7 +35,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="auto-style4">
-            <h1>
+            
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
@@ -49,7 +49,7 @@
                     </td>
                 </tr>
             </table>
-                管理者画面</h1>
+                <h1>管理者画面</h1>
             <br />
             <br />
             <br />

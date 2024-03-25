@@ -51,15 +51,6 @@ namespace Login
         protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
-        /// Label1 コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// GridView1 コントロール。
         /// </summary>
         /// <remarks>
